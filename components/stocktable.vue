@@ -361,16 +361,19 @@
          display="template"
          label="Show/Hide Columns"
          :showToggleAll="false"
+         class="bg-indigo-500"
        >
          <template #value>
            Show/Hide Columns
          </template>
          <template #footer v-if="showReset">
+
            <Button label="Reset" style="width: 100%;" @click="resetColumns"/>
          </template>
        </MultiSelect>
+       <button type="button"  class="rounded-md  px-3 py-2 bg-indigo-500 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300"  @click="exportCSV($event)" ><i class="pi pi-external-link"></i> Export</button>
 
-        <Button icon="pi pi-external-link" label="Export" @click="exportCSV($event)" />
+       
 
       
      </div>
