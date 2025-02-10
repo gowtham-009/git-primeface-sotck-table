@@ -522,13 +522,9 @@ showIcon
 
  <Drawer v-model:visible="visibleRight" header="Stock Details" position="right" class="!w-90 md:!w-80 lg:!w-[80rem] wd" >
 
-   <!-- <div class="w-full flex flex-wrap">
-     <div class="w-2/3 p-1" style="border: 1px solid red;"></div>
-     <div class="w-1/3 p-1" style="border: 1px solid red;"></div>
 
-   </div> -->
    <hr>
-   <div class="w-full p-1 flex flex-col h-full justify-between" style="border: 1px solid red;">
+   <div class="w-full p-1 flex flex-col h-full justify-between" >
      <div class="w-full flex wrap" style="border: 1px solid black;">
        <div class="w-2/3 p-1 b-1" style="border: 2px solid blue;" >
          <Tabs value="0">
@@ -568,7 +564,7 @@ showIcon
 
 
        </div>
-       <div class="w-1/3 p-1 b-1" style="border-left: 1px solid gray; border: 2px solid greenyellow;">
+       <div class="w-1/3 p-1 b-1" style="border-left: 1px solid gray;">
          <p class="text-black-500 text-xl p-2 mt-3"><b>CRM-123H43</b></p>
          <hr>
 
