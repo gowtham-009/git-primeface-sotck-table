@@ -1,61 +1,34 @@
 <template>
   <Toast />
 <div class="overflow-hidden rounded-lg bg-white shadow">
-<div class="px-2 py-2 flex justify-center gap-3">
+<div class="px-2 py-2 flex justify-start gap-3 " >
+
+  <p class="text-blue-700">Statement For <br>{{ todaydate }} - {{ startdaydate }}</p>
+  <button type="button" @click="customtoggle()"  class="rounded-md  px-2  text-sm font-semibold bg-indigo-500 text-white shadow-sm ring-1 ring-inset ring-gray-300"  >Customs</button>
+
+  <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 42%; top: 19%; width: 400px;;">
+    <div class="absolute bg-white border-l border-t border-gray-200 " style="width: 20px; height: 20px; ; transform: rotate(44deg) ; top: -11px; left:4%;"></div>
+  
+        <span class="text-lg"><i class="pi pi-clock"></i> Frequently used time period</span>
+        <div class="w-full p-1 flex gap-2 pl-5">
+          <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
+          <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md   px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
+          <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
+          <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3Months</button>
+
+        </div>
+
+      <div class="mt-3">
+        <span class="text-lg mt-3"><i class="pi pi-calendar"></i> DateRange Filter</span>
+        <div class="w-full p-1 flex gap-2 pl-5" >
+          <DatePicker v-model="dates" selectionMode="range" class="w-full" :manualInput="true" dateFormat="yy-mm-dd" showIcon @update:modelValue="handleDateChange" />
+          <span>{{ myval }}</span>
+        </div>
+      </div>
+  </div>
 
 
- <ul role="list" class="grid grid-cols-1  gap-2 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 mylist  " >
 
-   <li class="col-span-1 rounded-lg p-0" >
-     <div class=" w-full   p-0">
-       <div class="flex ">
-         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
-       </div>
-     </div>
-     <div>
-     </div>
-   </li>
-
-   <li class="col-span-1 rounded-lg p-0" >
-     <div class=" w-full  p-0">
-       <div class="flex ">
-         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md w-full  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
-       </div>
-     </div>
-     <div>
-     </div>
-   </li>
-
-   <li class="col-span-1 rounded-lg p-0" >
-     <div class=" w-full  p-0">
-       <div class="flex ">
-         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
-       </div>
-     </div>
-     <div>
-     </div>
-   </li>
-
-   <li class="col-span-1 rounded-lg p-0" >
-     <div class=" w-full  p-0">
-       <div class="flex ">
-         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3Months</button>
-       </div>
-     </div>
-     <div>
-     </div>
-   </li>
-
-   <li class="col-span-1 rounded-lg p-0" >
-     <div class=" w-full  p-0">
-       <div class="flex ">
-         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'customs' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="customs">Customs</button>
-       </div>
-     </div>
-     <div>
-     </div>
-   </li>
-</ul>
 
 
 
@@ -515,13 +488,7 @@ showIcon
 
    </DataTable>
 
-   <Dialog v-model:visible="visible" modal header="Date Range Filter" :style="{ width: '25rem' }" >
    
-       <div class="w-100 flex justify-center gap-2">
-         <DatePicker v-model="dates" selectionMode="range" :manualInput="true" dateFormat="yy-mm-dd" showIcon @update:modelValue="handleDateChange" />
-       </div>
-   
- </Dialog>
 
  <Drawer v-model:visible="visibleRight" header="Stock Details" position="right" class="!w-90 md:!w-80 lg:!w-[80rem] wd" >
 
@@ -664,7 +631,11 @@ import AccordionPanel from 'primevue/accordionpanel';
 import AccordionHeader from 'primevue/accordionheader';
 import AccordionContent from 'primevue/accordioncontent';
 
+const customfilterbox = ref(false);
+const customBox = ref(null);
 
+const todaydate=ref('')
+const startdaydate=ref('')
 const loading=ref(true)
 const content=ref(false)
 
@@ -678,12 +649,21 @@ const rows = ref(10);
 const dates = ref([]);
 const customers = ref([]);
 const activeFilter = ref('week');
-const visible = ref(false);
+
 
 const toast = useToast();
 
 
 const filters = ref();
+
+const myval=ref('')
+
+const customtoggle = () => {
+
+  customfilterbox.value = !customfilterbox.value;
+};
+
+
 
 
 const initFilters = () => {
@@ -750,6 +730,7 @@ getdata();
 
 const filterLastWeek = async() => {
 activeFilter.value = 'week';
+customfilterbox.value=false
 
 try {
 
@@ -768,11 +749,13 @@ console.error("Error:", error.message);
 
 
 setDateRange(6);
+
 };
 
 const filterLast15Days = async() => {
 
 activeFilter.value = '15days';
+customfilterbox.value=false
 try {
 
 const res = await fetch('/amounttable.json');
@@ -792,6 +775,7 @@ setDateRange(14);
 
 const filterLastMonth = async() => {
 activeFilter.value = 'month';
+customfilterbox.value=false
 try {
 
 const res = await fetch('/amounttable.json');
@@ -810,6 +794,7 @@ setDateRange(30);
 
 const filterLast3Months = async() => {
 activeFilter.value = '3months';
+customfilterbox.value=false
 try {
 
 const res = await fetch('/amounttable.json');
@@ -831,20 +816,41 @@ const today = new Date();
 const startDate = new Date();
 startDate.setDate(today.getDate() - days);
 dates.value = [startDate.toISOString().split('T')[0], today.toISOString().split('T')[0]];
+myval.value=dates.value
+
+
+
+
+
+const formatDate = (date) => {
+        const options = { day: '2-digit', month: 'short', year: 'numeric', weekday: 'long' };
+        return date.toLocaleDateString('en-GB', options)
+            .replace(',', '')  // Remove the comma
+            .replace(/(\d{2}) (\w{3}) (\d{4}) (\w+)/, '$1-$2-$3 ($4)');
+    };
+
+    const formattedToday = formatDate(today);
+    const formattedStartDate = formatDate(startDate);
+
+    todaydate.value=formattedToday
+    startdaydate.value=formattedStartDate
+    
+
 };
 
 const handleDateChange = (newDates) => {
+ 
 activeFilter.value = 'customs';
 dates.value = newDates;
+
+console.log(dates.value)
 };
 
-const customs=()=>{
-activeFilter.value = 'customs';
-visible.value=true
-
-}
+console.log(dates.value,"henqweoh")
 const filteredCustomers = computed(() => {
+ 
 if (!dates.value || dates.value.length !== 2) {
+
 return customers.value;
 }
 
@@ -855,7 +861,9 @@ endDate.setHours(23, 59, 59, 999);
 return customers.value.filter(customer => {
 const customerDate = new Date(customer.date);
 return customerDate >= startDate && customerDate <= endDate;
+
 });
+
 });
 
 const columns = ref([
