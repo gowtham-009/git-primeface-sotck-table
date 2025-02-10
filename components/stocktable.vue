@@ -2,11 +2,58 @@
          <Toast />
     <div class="overflow-hidden rounded-lg bg-white shadow">
       <div class="px-2 py-2 flex justify-center gap-3">
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3Months</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'customs' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="customs">Customs</button>
+        <ul role="list" class="grid grid-cols-1  gap-2 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 mylist  " >
+
+<li class="col-span-1 rounded-lg p-0" >
+  <div class=" w-full   p-0">
+    <div class="flex ">
+      <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</li>
+
+<li class="col-span-1 rounded-lg p-0" >
+  <div class=" w-full  p-0">
+    <div class="flex ">
+      <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md w-full  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</li>
+
+<li class="col-span-1 rounded-lg p-0" >
+  <div class=" w-full  p-0">
+    <div class="flex ">
+      <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</li>
+
+<li class="col-span-1 rounded-lg p-0" >
+  <div class=" w-full  p-0">
+    <div class="flex ">
+      <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3Months</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</li>
+
+<li class="col-span-1 rounded-lg p-0" >
+  <div class=" w-full  p-0">
+    <div class="flex ">
+      <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'customs' }" class="rounded-md w-full px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="customs">Customs</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</li>
+</ul>
 
       
       </div>
@@ -294,7 +341,7 @@
           >
 
           <template #header>
-               <div class="w-100 flex justify-start items-center gap-2">
+               <div class="w-100 flex justify-start items-center gap-2 flex-wrap">
                <IconField>
                    <InputIcon>
                        <i class="pi pi-search" />
@@ -912,7 +959,11 @@ const cancelfun=async()=>{
     }
 }
   </script>
-  <style>
+   <style>
  
-
-</style>
+   @media(max-width:992px){
+     .mylist{
+       width: 100% !important;
+     }
+   }
+   </style>
