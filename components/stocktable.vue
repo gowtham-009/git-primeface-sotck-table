@@ -6,7 +6,7 @@
        
        <div class="w-full">
         <div class="w-full text-black-400" > Statement For</div>
-        <div class="w-full text-indigo-500" style=" margin-top: -10px;"> {{ startdate }} To {{ enddate }}</div>
+        <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ startdate }} To {{ enddate }}</div>
        </div>
         <div class="w-full h-9  flex gap-2 justify-end" >
 
@@ -121,6 +121,9 @@
 </div>
 </div>
 
+<div class="w-full mt-3 p-3 flex justify-end animate-pulse" >
+  <div class="h-8 bg-gray-300 rounded col-span-1 w-96"></div>
+</div>
 
 <div class="space-y-4 p-4 mt-5" >
      <!-- Table Skeleton -->
@@ -341,7 +344,7 @@
 
   <div class="overflow-hidden rounded-lg bg-white shadow mt-1">
     <div class="px-1 py-2 ">
-      <DataTable  ref="dt" v-model:filters="filters" paginator :rows="rows"  :loading="loading" filterDisplay="menu" :globalFilterFields="['stockname', 'quantity', 'avgprice', 'ltp', 'invamt', 'mktval', 'overall', 'days', 'date']" stripedRows :value="filteredCustomers"  >
+      <DataTable  ref="dt" v-model:filters="filters" paginator :rows="rows" removableSort :loading="loading" filterDisplay="menu" :globalFilterFields="['stockname', 'quantity', 'avgprice', 'ltp', 'invamt', 'mktval', 'overall', 'days', 'date']" stripedRows :value="filteredCustomers"  >
 
 <template #paginatorstart>
 <div style="display: flex; gap: 10px;">
@@ -1000,22 +1003,16 @@ console.error("Error:", error.message);
 
 </script>
 <style>
-/* Change background color of pagination buttons */
 .p-paginator .p-paginator-pages .p-paginator-page {
-    background-color: #007bff !important; /* Change this to your preferred color */
-    color: white !important; /* Change text color if needed */
-    border-radius: 5px; /* Optional: for rounded buttons */
+    background-color: #5fa5f5 !important; 
+    color: white !important; 
+   
 }
 
-/* Change background color on hover */
+
 .p-paginator .p-paginator-pages .p-paginator-page:hover {
     background-color: #0056b3 !important;
 }
 
-/* Change background color of active page */
-.p-paginator .p-paginator-pages .p-highlight {
-  background-color: black !important;
-    color: white !important; /* Ensure text is visible */
-}
 
 </style>
