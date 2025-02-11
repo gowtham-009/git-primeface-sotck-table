@@ -19,6 +19,7 @@
         "@headlessui/vue": "^1.7.23",
         "@heroicons/vue": "^2.2.0",
         "@primevue/themes": "^4.0.0-rc.3",
+        "@vueuse/core": "^12.5.0",
         "primeicons": "^7.0.0",
         "primevue": "^4.0.0-rc.3"
     }

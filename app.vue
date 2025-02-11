@@ -121,15 +121,11 @@
   import {
     Dialog,
     DialogPanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
+
     TransitionChild,
     TransitionRoot,
   } from '@headlessui/vue'
  
-  import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   
   const navigation = [
     { name: 'Dashboard', href: '#',  current: true },
