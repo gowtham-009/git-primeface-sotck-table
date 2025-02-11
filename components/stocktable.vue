@@ -690,7 +690,7 @@ const filterLastWeek = async () => {
   setInterval(() => {
     loading.value=false
     content.value=true
-  }, 5000);
+  }, 1000);
   const today = new Date();
   try {
 
