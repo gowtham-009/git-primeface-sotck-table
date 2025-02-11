@@ -1,6 +1,6 @@
 <template>
   <Toast />
-  <div class="overflow-hidden rounded-lg bg-white shadow">
+  <div class="overflow-hidden rounded-lg bg-white ">
     <div class="px-1 py-2 ">
       <div class="card flex justify-between items-center gap-2  text-lg">
        
@@ -41,7 +41,7 @@
 
 
          </div>
-   <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 71%; top: 18%; width: 400px;;">
+   <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 69%; top: 15%; width: 400px;;">
   <div class="absolute bg-white border-l border-t border-gray-200 " style="width: 20px; height: 20px; ; transform: rotate(44deg) ; top: -11px; left:89%;"></div>
 
       <span class="text-lg"><i class="pi pi-clock"></i> Frequently used time period</span>
@@ -67,8 +67,8 @@
               <DatePicker v-model="end" dateFormat="yy-mm-dd" showIcon />
           </div>
        </div>
-      <div class="w-full flex justify-center mt-2">
-        <button @click="applyFilter" class="text-indigo-500">Apply filter</button>
+       <div class="w-full flex justify-start mt-2">
+        <button @click="applyFilter" class="text-white bg-indigo-600 py-1 px-2 rounded-lg">Apply filter</button>
       </div>
       </div>
     </div>
@@ -80,7 +80,7 @@
   </div>
 
   <div v-if="loading" class="w-full mt-5">
-<div class="overflow-hidden rounded-lg bg-white shadow" >
+<div class="overflow-hidden rounded-lg bg-white " >
 <div class="px-12 py-2 flex animate-pulse">
 <div class="w-full p-1 flex" style="border-right: 2px solid rgb(189, 189, 189);">
  <div class="flex justify-center items-center p-1">
@@ -261,7 +261,7 @@
 
 
 <div class="w-full" v-if="content">
-<div class="overflow-hidden rounded-lg bg-white shadow mt-3">
+<div class="overflow-hidden rounded-lg bg-white  mt-1">
     <div class="px-1 py-2">
       <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -339,23 +339,24 @@
     </div>
   </div>
 
-  <div class="overflow-hidden rounded-lg bg-white shadow mt-3">
+  <div class="overflow-hidden rounded-lg bg-white shadow mt-1">
     <div class="px-1 py-2 ">
-      <DataTable  ref="dt" v-model:filters="filters" paginator :rows="rows"  :loading="loading" filterDisplay="menu" :globalFilterFields="['stockname', 'quantity', 'avgprice', 'ltp', 'invamt', 'mktval', 'overall', 'days', 'date']" stripedRows :value="filteredCustomers"  tableStyle="min-width: 50rem">
+      <DataTable  ref="dt" v-model:filters="filters" paginator :rows="rows"  :loading="loading" filterDisplay="menu" :globalFilterFields="['stockname', 'quantity', 'avgprice', 'ltp', 'invamt', 'mktval', 'overall', 'days', 'date']" stripedRows :value="filteredCustomers"  >
 
 <template #paginatorstart>
 <div style="display: flex; gap: 10px;">
-   <Button v-for="size in [10, 50, 100]" :key="size" :label="size" @click="rows = size" :class="{'p-button-primary': rows === size, 'p-button-outlined': rows !== size}" />
+  <button type="button" v-for="size in [10, 50, 100]" :key="size" :label="size" @click="rows = size"  class="rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm " :class="{'bg-indigo-500': rows === size, 'bg-indigo-200': rows !== size}" >  {{ size }}</button>
+
 </div>
 </template>
 
 <template #header>
       <div class="flex justify-end">
-          <IconField>
+          <IconField >
               <InputIcon>
-                  <i class="pi pi-search" />
+                  <i class="pi pi-search mb-2" />
               </InputIcon>
-              <InputText v-model="filters['global'].value" placeholder="Search stock and company" />
+              <InputText v-model="filters['global'].value" placeholder="Search stock and company" class="w-96" />
           </IconField>
       </div>
 
@@ -608,10 +609,13 @@ import { ref, onMounted } from 'vue';
 import DatePicker from 'primevue/datepicker';
 import { FilterMatchMode, FilterOperator } from '@primevue/core/api';
 import { useToast } from "primevue/usetoast";
-import { onClickOutside } from '@vueuse/core';
+
+import 'primeicons/primeicons.css'
+
 
 const loading=ref(true)
 const content=ref(false)
+
 const toast = useToast();
 
 const investamount=ref('')
@@ -679,8 +683,11 @@ const getdata = async () => {
 
 // Function to filter last 7 days
 const filterLastWeek = async () => {
-  loading.value=false
-  content.value=true
+ 
+  setInterval(() => {
+    loading.value=false
+    content.value=true
+  }, 5000);
   const today = new Date();
   try {
 
@@ -714,6 +721,9 @@ console.error("Error:", error.message);
   if (filteredCustomers.value.length > 0) {
       startdate.value=filteredCustomers.value[0].date
       enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+
+      start.value=filteredCustomers.value[0].date
+      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
      
   } else {
       console.log("No customers found in the last week.");
@@ -754,6 +764,8 @@ console.error("Error:", error.message);
       startdate.value=filteredCustomers.value[0].date
       enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
      
+      start.value=filteredCustomers.value[0].date
+      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
   } else {
       console.log("No customers found in the last week.");
   }
@@ -792,6 +804,9 @@ console.error("Error:", error.message);
   if (filteredCustomers.value.length > 0) {
       startdate.value=filteredCustomers.value[0].date
       enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+
+      start.value=filteredCustomers.value[0].date
+      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
      
   } else {
       console.log("No customers found in the last week.");
@@ -831,6 +846,9 @@ console.error("Error:", error.message);
   if (filteredCustomers.value.length > 0) {
       startdate.value=filteredCustomers.value[0].date
       enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+
+      start.value=filteredCustomers.value[0].date
+      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
      
   } else {
       console.log("No customers found in the last week.");
@@ -979,10 +997,25 @@ console.error("Error:", error.message);
 }
 
 
-onClickOutside(customBox, () => {
-customfilterbox.value = false; // Hide when clicking outside
-});
+
 </script>
 <style>
+/* Change background color of pagination buttons */
+.p-paginator .p-paginator-pages .p-paginator-page {
+    background-color: #007bff !important; /* Change this to your preferred color */
+    color: white !important; /* Change text color if needed */
+    border-radius: 5px; /* Optional: for rounded buttons */
+}
+
+/* Change background color on hover */
+.p-paginator .p-paginator-pages .p-paginator-page:hover {
+    background-color: #0056b3 !important;
+}
+
+/* Change background color of active page */
+.p-paginator .p-paginator-pages .p-highlight {
+  background-color: black !important;
+    color: white !important; /* Ensure text is visible */
+}
 
 </style>
