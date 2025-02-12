@@ -6,7 +6,7 @@
        
        <div class="w-full">
         <div class="w-full text-black-400" > Statement For</div>
-        <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ startdate }} To {{ enddate }}</div>
+        <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ start }} To {{ end }}</div>
        </div>
         <div class="w-full h-9  flex gap-2 justify-end" >
 
