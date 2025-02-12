@@ -923,7 +923,7 @@ const applyFilter = () => {
   });
 
   activeFilter.value = ''; // Reset filter state when custom date is selected
-  visibleTop.value = false;
+  customfilterbox.value=false
 };
 
 onMounted(() => {
