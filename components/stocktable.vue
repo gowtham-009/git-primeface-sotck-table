@@ -6,7 +6,7 @@
        
        <div class="w-full">
         <div class="w-full text-black-400" > Statement For</div>
-        <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ start }} To {{ end }}</div>
+        <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ startdate }} To {{ enddate }}</div>
        </div>
         <div class="w-full h-9  flex gap-2 justify-end" >
 
@@ -634,8 +634,8 @@ const rows = ref(10);
 const filters = ref();
 
 const customers = ref([]);
-const start = ref(null);
-const end = ref(null);
+const start = ref('');
+const end = ref('');
 const filteredCustomers = ref([]);
 const activeFilter = ref('week'); // Track active filter
 
@@ -730,11 +730,14 @@ console.error("Error:", error.message);
       return `${day}-${month}-${year}`;
     };
 
-    startdate.value = filteredCustomers.value[0].date;
-    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+   const stdate= filteredCustomers.value[0].date;
+   const endate = filteredCustomers.value[filteredCustomers.value.length - 1].date;
 
-    start.value = formatDate(filteredCustomers.value[0].date);
-    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+    startdate.value = formatDate(stdate);
+    enddate.value = formatDate(endate);
+
+    start.value=startdate.value
+    end.value=enddate.value
 
     console.log(start.value);
   } else {
@@ -781,19 +784,22 @@ console.error("Error:", error.message);
       return `${day}-${month}-${year}`;
     };
 
-    startdate.value = filteredCustomers.value[0].date;
-    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+    const stdate= filteredCustomers.value[0].date;
+   const endate = filteredCustomers.value[filteredCustomers.value.length - 1].date;
 
-    start.value = formatDate(filteredCustomers.value[0].date);
-    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+    startdate.value = formatDate(stdate);
+    enddate.value = formatDate(endate);
 
-    console.log(start.value);
+    start.value=startdate.value
+    end.value=enddate.value
+
+   
   } else {
     console.log("No customers found in the last week.");
   }
 
   activeFilter.value = '15days'; // Update active filter state
-  console.log('Filtered last 15 days', filteredCustomers.value);
+  
   customfilterbox.value=false
 };
 
@@ -832,19 +838,22 @@ console.error("Error:", error.message);
       return `${day}-${month}-${year}`;
     };
 
-    startdate.value = filteredCustomers.value[0].date;
-    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+    const stdate= filteredCustomers.value[0].date;
+   const endate = filteredCustomers.value[filteredCustomers.value.length - 1].date;
 
-    start.value = formatDate(filteredCustomers.value[0].date);
-    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+    startdate.value = formatDate(stdate);
+    enddate.value = formatDate(endate);
 
-    console.log(start.value);
+    start.value=startdate.value
+    end.value=enddate.value
+
+   
   } else {
     console.log("No customers found in the last week.");
   }
 
   activeFilter.value = 'month'; // Update active filter state
-  console.log('Filtered last month', filteredCustomers.value);
+  
   customfilterbox.value=false
 };
 
@@ -883,19 +892,21 @@ console.error("Error:", error.message);
       return `${day}-${month}-${year}`;
     };
 
-    startdate.value = filteredCustomers.value[0].date;
-    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+    const stdate= filteredCustomers.value[0].date;
+   const endate = filteredCustomers.value[filteredCustomers.value.length - 1].date;
 
-    start.value = formatDate(filteredCustomers.value[0].date);
-    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+    startdate.value = formatDate(stdate);
+    enddate.value = formatDate(endate);
+
+    start.value=startdate.value
+    end.value=enddate.value
 
     console.log(start.value);
   } else {
     console.log("No customers found in the last week.");
   }
 
-  activeFilter.value = '3months'; // Update active filter state
-  console.log('Filtered last 3 months', filteredCustomers.value);
+  activeFilter.value = '3months'; 
   customfilterbox.value=false
 };
 
@@ -913,8 +924,8 @@ const applyFilter = () => {
     return `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
   };
 
-  start.value=formatDate(startDate)
-  end.value=formatDate(endDate)
+  startdate.value=formatDate(startDate)
+  enddate.value=formatDate(endDate)
 
 
   filteredCustomers.value = customers.value.filter(customer => {
