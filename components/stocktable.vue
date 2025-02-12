@@ -64,12 +64,12 @@
        <div class="flex justify-center items-center gap-2">
         <div>
               <span>Start Date</span>
-              <DatePicker  v-model="start" dateFormat="yy-mm-dd" showIcon />
+              <DatePicker  v-model="start" dateFormat="dd-mm-yy" showIcon />
           </div>
           <span>To</span>
           <div>
               <span>End Date</span>
-              <DatePicker v-model="end" dateFormat="yy-mm-dd" showIcon />
+              <DatePicker v-model="end" dateFormat="dd-mm-yy" showIcon />
           </div>
        </div>
        <div class="w-full flex justify-start mt-2">
@@ -438,14 +438,14 @@
 
 <Column v-if="visibleColumns.includes('date')" sortable field="date" header="Date">
 <template #body="{ data }">
-           {{ data.date }}
+  {{ formatDatee(data.date) }}
        </template>
        <template  #filter="{ filterModel }">
          <DatePicker 
-v-model="filters.date.constraints[0].value" 
-dateFormat="yy-mm-dd" 
-showIcon
-@update:modelValue="applyDateFilter"
+          v-model="filters.date.constraints[0].value" 
+          dateFormat="dd-mm-yy" 
+          showIcon
+          @update:modelValue="applyDateFilter"
 />
        </template>
 </Column>
@@ -610,6 +610,12 @@ import { useToast } from "primevue/usetoast";
 
 import 'primeicons/primeicons.css'
 
+
+const formatDatee = (dateString) => {
+  if (!dateString) return "";
+  const [year, month, day] = dateString.split("-");
+  return `${day}-${month}-${year.slice(-2)}`; // Convert yy-mm-dd to dd-mm-yy
+};
 
 const loading=ref(true)
 const content=ref(false)
