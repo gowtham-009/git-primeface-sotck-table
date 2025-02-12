@@ -125,138 +125,137 @@
   <div class="h-8 bg-gray-300 rounded col-span-1 w-96"></div>
 </div>
 
-<div class="space-y-4 p-4 mt-5" >
+<div class="space-y-4 p-4 mt-3" >
      <!-- Table Skeleton -->
      <div class="grid grid-cols-9 gap-4 animate-pulse">
        <!-- Rows -->
        <!-- Row 1 -->
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         
        </div>
    
        <!-- Row 2 -->
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         
        </div>
    
        <!-- Row 3 -->
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         
        </div>
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         
        </div>
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
 
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
 
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         
        </div>
 
-       <div class="col-span-9 grid grid-cols-9 gap-4">
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
-         <div class="h-6 bg-gray-300 rounded col-span-1"></div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
+       </div>
+       <div class="col-span-12 grid grid-cols-7 gap-4">
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+         <div class="h-6 w-full p-5 bg-gray-300 rounded "></div>
+        
        </div>
      </div>
    </div>
