@@ -899,20 +899,31 @@ console.error("Error:", error.message);
   customfilterbox.value=false
 };
 
-// Function to filter by selected date range
 const applyFilter = () => {
   if (!start.value || !end.value) {
     filteredCustomers.value = customers.value;
     return;
   }
+
+  // Convert date values to dd-mm-yyyy format
+  const startDate = new Date(start.value);
+  const endDate = new Date(end.value);
+  
+  const formatDate = (date) => {
+    return `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
+  };
+
+  start.value=formatDate(startDate)
+  end.value=formatDate(endDate)
+
+
   filteredCustomers.value = customers.value.filter(customer => {
     const customerDate = new Date(customer.date);
-    return customerDate >= new Date(start.value) && customerDate <= new Date(end.value).setHours(23, 59, 59, 999);
+    return customerDate >= startDate && customerDate <= endDate.setHours(23, 59, 59, 999);
   });
 
   activeFilter.value = ''; // Reset filter state when custom date is selected
-  console.log('Filter applied', start.value, end.value);
-  customfilterbox.value=false
+  visibleTop.value = false;
 };
 
 onMounted(() => {
