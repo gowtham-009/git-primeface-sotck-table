@@ -84,8 +84,8 @@
     </div>
   </div>
 
-  <div  class="w-full mt-5" v-if="loading">
-    <div class="p-4 space-y-4">
+  <div  class="w-full mt-1" v-if="loading">
+    <div class="p-1 space-y-4">
   
       <div class="flex space-x-4">
     <!-- Skeleton Card 1 -->
@@ -128,7 +128,7 @@
 
     <!-- Search Bar Skeleton -->
     <div class="h-12 border border-gray-200  bg-white animate-pulse rounded-lg flex justify-end items-center p-3">
-      <div class="h-6 w-96 bg-gray-200 animate-pulse rounded"></div>
+      <div class="h-8 w-96 bg-gray-200 animate-pulse rounded"></div>
     </div>
 
     <!-- Table Skeleton -->
