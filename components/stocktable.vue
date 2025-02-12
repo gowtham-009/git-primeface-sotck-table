@@ -46,7 +46,7 @@
 
 
          </div>
-   <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 69%; top: 15%; width: 400px;;">
+   <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 70%; top: 10%; width: 400px;;">
   <div class="absolute bg-white border-l border-t border-gray-200 " style="width: 20px; height: 20px; ; transform: rotate(44deg) ; top: -11px; left:89%;"></div>
 
       <span class="text-lg"><i class="pi pi-clock"></i> Frequently used time period</span>
