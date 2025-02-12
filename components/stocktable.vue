@@ -635,8 +635,8 @@ const rows = ref(10);
 const filters = ref();
 
 const customers = ref([]);
-const start = ref('');
-const end = ref('');
+const start = ref(null);
+const end = ref(null);
 const filteredCustomers = ref([]);
 const activeFilter = ref('week'); // Track active filter
 
