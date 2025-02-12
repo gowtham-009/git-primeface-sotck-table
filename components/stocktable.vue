@@ -722,14 +722,23 @@ console.error("Error:", error.message);
 
   // Log first and last date if data exists
   if (filteredCustomers.value.length > 0) {
-      startdate.value=filteredCustomers.value[0].date
-      enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+    const formatDate = (date) => {
+      const d = new Date(date);
+      const day = String(d.getDate()).padStart(2, '0');
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const year = d.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
 
-      start.value=filteredCustomers.value[0].date
-      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
-     
+    startdate.value = filteredCustomers.value[0].date;
+    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+
+    start.value = formatDate(filteredCustomers.value[0].date);
+    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+
+    console.log(start.value);
   } else {
-      console.log("No customers found in the last week.");
+    console.log("No customers found in the last week.");
   }
 };
 
@@ -764,13 +773,23 @@ console.error("Error:", error.message);
   });
 
   if (filteredCustomers.value.length > 0) {
-      startdate.value=filteredCustomers.value[0].date
-      enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
-     
-      start.value=filteredCustomers.value[0].date
-      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
+    const formatDate = (date) => {
+      const d = new Date(date);
+      const day = String(d.getDate()).padStart(2, '0');
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const year = d.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
+
+    startdate.value = filteredCustomers.value[0].date;
+    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+
+    start.value = formatDate(filteredCustomers.value[0].date);
+    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+
+    console.log(start.value);
   } else {
-      console.log("No customers found in the last week.");
+    console.log("No customers found in the last week.");
   }
 
   activeFilter.value = '15days'; // Update active filter state
@@ -805,14 +824,23 @@ console.error("Error:", error.message);
   });
 
   if (filteredCustomers.value.length > 0) {
-      startdate.value=filteredCustomers.value[0].date
-      enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+    const formatDate = (date) => {
+      const d = new Date(date);
+      const day = String(d.getDate()).padStart(2, '0');
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const year = d.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
 
-      start.value=filteredCustomers.value[0].date
-      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
-     
+    startdate.value = filteredCustomers.value[0].date;
+    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+
+    start.value = formatDate(filteredCustomers.value[0].date);
+    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+
+    console.log(start.value);
   } else {
-      console.log("No customers found in the last week.");
+    console.log("No customers found in the last week.");
   }
 
   activeFilter.value = 'month'; // Update active filter state
@@ -847,14 +875,23 @@ console.error("Error:", error.message);
   });
 
   if (filteredCustomers.value.length > 0) {
-      startdate.value=filteredCustomers.value[0].date
-      enddate.value= filteredCustomers.value[filteredCustomers.value.length - 1].date
+    const formatDate = (date) => {
+      const d = new Date(date);
+      const day = String(d.getDate()).padStart(2, '0');
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const year = d.getFullYear();
+      return `${day}-${month}-${year}`;
+    };
 
-      start.value=filteredCustomers.value[0].date
-      end.value=filteredCustomers.value[filteredCustomers.value.length - 1].date
-     
+    startdate.value = filteredCustomers.value[0].date;
+    enddate.value = filteredCustomers.value[filteredCustomers.value.length - 1].date;
+
+    start.value = formatDate(filteredCustomers.value[0].date);
+    end.value = formatDate(filteredCustomers.value[filteredCustomers.value.length - 1].date);
+
+    console.log(start.value);
   } else {
-      console.log("No customers found in the last week.");
+    console.log("No customers found in the last week.");
   }
 
   activeFilter.value = '3months'; // Update active filter state
