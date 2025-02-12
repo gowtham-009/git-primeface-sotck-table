@@ -134,13 +134,13 @@
     <!-- Table Skeleton -->
     <div class="border border-gray-200 rounded-lg">
         <div class="grid grid-cols-7 bg-gray-100 p-3 font-semibold">
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-6 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
         </div>
 
         <!-- Table Rows -->
