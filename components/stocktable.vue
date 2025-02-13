@@ -25,10 +25,13 @@
               :showToggleAll="false"
               :dropdownIcon="null" 
               class="p-0 bg-indigo-500"
+              style="width: 42px;"
               >
-              <template #value >
-              <i class="pi pi-objects-column"></i>
-              </template>
+
+              <template #dropdownicon>
+                <i class="pi pi-objects-column" />
+            </template>
+              
               <template #footer v-if="showReset">
 
               <Button label="Reset" style="width: 100%;" @click="resetColumns"/>
@@ -54,12 +57,12 @@
         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md   px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
         <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3Months</button>
+        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3 Months</button>
 
       </div>
 
     <div class="mt-3">
-      <span class="text-lg mt-3"><i class="pi pi-calendar"></i> DateRange Filter</span>
+      <span class="text-lg mt-3"><i class="pi pi-calendar"></i> Date Range Filter</span>
       <div class="w-full p-1  pl-5" >
        <div class="flex justify-center items-center gap-2">
         <div>
@@ -614,7 +617,7 @@ import 'primeicons/primeicons.css'
 const formatDatee = (dateString) => {
   if (!dateString) return "";
   const [year, month, day] = dateString.split("-");
-  return `${day}-${month}-${year.slice(-2)}`; // Convert yy-mm-dd to dd-mm-yy
+  return `${day}-${month}-${year.slice(-4)}`; // Convert yy-mm-dd to dd-mm-yy
 };
 
 const loading=ref(true)

@@ -1,12 +1,5 @@
 <template>
-  <!--
-    This example requires updating your template:
 
-    ```
-    <html class="h-full bg-white">
-    <body class="h-full">
-    ```
-  -->
   <div>
 
 
@@ -14,8 +7,10 @@
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6">
-       
-        <nav class="flex flex-1 flex-col mt-3">
+       <div class="w-full p-2 mt-2 flex justify-center" >
+          <span class=" text-white" style="font-size: 2rem;">W3</span>
+       </div>
+        <nav class="flex flex-1 flex-col ">
           <ul role="list" class="flex flex-1 flex-col gap-y-7">
             <li>
               <ul role="list" class="-mx-2 space-y-1">
