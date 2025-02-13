@@ -1,10 +1,5 @@
 <template>
   <Toast />
-
-  
-
-
-
   <div class="overflow-hidden rounded-lg bg-white ">
     <div class="px-1 py-2 ">
       <div class="card flex justify-between items-center gap-2  text-lg">
@@ -369,17 +364,17 @@
   <template #empty> No customers found. </template>
   <template #loading> Loading customers data. Please wait. </template>
 
-<Column  v-if="visibleColumns.includes('stockname')" sortable field="stockname" header="Stock Name">
+<Column  class="cursor-pointer"  v-if="visibleColumns.includes('stockname')" sortable field="stockname" header="Stock Name">
   <template #body="{ data }">
-          {{ data.stockname }}
+         <span @click="rightcanva(data)"> {{ data.stockname }}</span>
       </template>
       <template #filter="{ filterModel }">
           <InputText v-model="filterModel.value" type="text" placeholder="Search by name" />
       </template>
 </Column>
-<Column v-if="visibleColumns.includes('quantity')"  sortable field="quantity" header="Quantity" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('quantity')"  sortable field="quantity" header="Quantity" :showFilterOperator="false" :showFilterMatchModes="false">
   <template #body="{ data }">
-          {{ data.quantity }}
+         <span @click="rightcanva(data)"> {{ data.quantity }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -389,9 +384,9 @@
   </div>
 </template>
 </Column>
-<Column v-if="visibleColumns.includes('avgprice')" field="avgprice" sortable header="Avgprice" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('avgprice')" field="avgprice" sortable header="Avgprice" :showFilterOperator="false" :showFilterMatchModes="false">
   <template #body="{ data }">
-          {{ data.avgprice }}
+          <span @click="rightcanva(data)">{{ data.avgprice }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -401,9 +396,9 @@
   </div>
 </template>
 </Column>
-<Column  v-if="visibleColumns.includes('ltp')" field="ltp" sortable header="LTP" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer"  v-if="visibleColumns.includes('ltp')" field="ltp" sortable header="LTP" :showFilterOperator="false" :showFilterMatchModes="false">
 <template #body="{ data }">
-          {{ data.ltp }}
+         <span @click="rightcanva(data)"> {{ data.ltp }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -413,9 +408,9 @@
   </div>
 </template>
 </Column>
-<Column v-if="visibleColumns.includes('invamt')" field="invamt" sortable header="Invamt" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('invamt')" field="invamt" sortable header="Invamt" :showFilterOperator="false" :showFilterMatchModes="false">
 <template #body="{ data }">
-          {{ data.invamt }}
+          <span @click="rightcanva(data)">{{ data.invamt }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -425,9 +420,9 @@
   </div>
 </template>
 </Column>
-<Column v-if="visibleColumns.includes('mktval')" field="mktval" sortable header="Mktval" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('mktval')" field="mktval" sortable header="Mktval" :showFilterOperator="false" :showFilterMatchModes="false">
 <template #body="{ data }">
-          {{ data.mktval }}
+         <span @click="rightcanva(data)"> {{ data.mktval }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="100000"></Slider>
@@ -439,9 +434,9 @@
 </Column>
 
 
-<Column v-if="visibleColumns.includes('date')" sortable field="date" header="Date">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('date')" sortable field="date" header="Date">
 <template #body="{ data }">
-  {{ formatDatee(data.date) }}
+  <span @click="rightcanva(data)">{{ formatDatee(data.date) }}</span>
        </template>
        <template  #filter="{ filterModel }">
          <DatePicker 
@@ -452,9 +447,9 @@
 />
        </template>
 </Column>
-<Column v-if="visibleColumns.includes('overall')" sortable field="overall" header="Overall " :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer" v-if="visibleColumns.includes('overall')" sortable field="overall" header="Overall " :showFilterOperator="false" :showFilterMatchModes="false">
   <template #body="{ data }">
-          {{ data.overall }}
+          <span @click="rightcanva(data)">{{ data.overall }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -464,9 +459,9 @@
   </div>
 </template>
 </Column>
-<Column v-if="visibleColumns.includes('days')" field="days" sortable header="Days" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column class="cursor-pointer" v-if="visibleColumns.includes('days')" field="days" sortable header="Days" :showFilterOperator="false" :showFilterMatchModes="false">
   <template #body="{ data }">
-          {{ data.days }}
+        <span  @click="rightcanva(data)"> {{ data.days }}</span>
       </template>
 <template #filter="{ filterModel }">
   <Slider v-model="filterModel.value" range class="m-4" :min="1" :max="1000"></Slider>
@@ -476,7 +471,7 @@
   </div>
 </template>
 </Column>
-<Column   v-if="visibleColumns.includes('action')"  field="action" header="Action" :showFilterOperator="false" :showFilterMatchModes="false">
+<Column  class="cursor-pointer"  v-if="visibleColumns.includes('action')"  field="action" header="Action" :showFilterOperator="false" :showFilterMatchModes="false">
   <template #body="{ data }">
  <button type="button"  @click="rightcanva(data)" class="rounded-md w-full  px-1 py-1 text-sm bg-indigo-500 font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300" ><i class="pi pi-eye"></i></button>
 
