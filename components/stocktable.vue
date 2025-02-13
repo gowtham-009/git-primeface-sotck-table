@@ -82,54 +82,77 @@
     </div>
   </div>
 
-  <div  class="w-full mt-1" v-if="loading">
+  <div  class="w-full" v-if="loading">
     <div class="p-1 space-y-4">
   
-      <div class="flex space-x-4">
-    <!-- Skeleton Card 1 -->
-    <div class="w-full h-20 bg-white rounded-lg shadow p-4 flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gray-300 rounded-full animate-pulse"></div>
-        <div>
-            <div class="w-24 h-4 bg-gray-300 rounded animate-pulse mb-2"></div>
-            <div class="w-16 h-5 bg-gray-300 rounded animate-pulse"></div>
-        </div>
-    </div>
+      <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-    <!-- Skeleton Card 2 -->
-    <div class="w-full h-20 bg-white rounded-lg shadow p-4 flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gray-300 rounded-full animate-pulse"></div>
-        <div>
-            <div class="w-24 h-4 bg-gray-300 rounded animate-pulse mb-2"></div>
-            <div class="w-16 h-5 bg-gray-300 rounded animate-pulse"></div>
-        </div>
+<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
+  <div class="flex w-full items-center justify-between space-x-6 p-2">
+    <div class="flex truncate">
+      <div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full">
+        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+      </div>
+      <div class="w-full p-1">
+        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
+        <div class="h-6 bg-gray-300 rounded w-16"></div>
+      </div>
     </div>
+  </div>
+</li>
 
-    <!-- Skeleton Card 3 -->
-    <div class="w-full h-20 bg-white rounded-lg shadow p-4 flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gray-300 rounded-full animate-pulse"></div>
-        <div>
-            <div class="w-24 h-4 bg-gray-300 rounded animate-pulse mb-2"></div>
-            <div class="w-16 h-5 bg-gray-300 rounded animate-pulse"></div>
-        </div>
+<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
+  <div class="flex w-full items-center justify-between space-x-6 p-2">
+    <div class="flex truncate">
+      <div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full">
+        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+      </div>
+      <div class="w-full p-1">
+        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
+        <div class="h-6 bg-gray-300 rounded w-16"></div>
+      </div>
     </div>
+  </div>
+</li>
 
-    <!-- Skeleton Card 4 -->
-    <div class="w-full h-20 bg-white rounded-lg shadow p-4 flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gray-300 rounded-full animate-pulse"></div>
-        <div>
-            <div class="w-24 h-4 bg-gray-300 rounded animate-pulse mb-2"></div>
-            <div class="w-16 h-5 bg-gray-300 rounded animate-pulse"></div>
-        </div>
+<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
+  <div class="flex w-full items-center justify-between space-x-6 p-2">
+    <div class="flex truncate">
+      <div class="flex justify-center items-center p-3 bg-green-50 rounded-full">
+        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+      </div>
+      <div class="w-full p-1">
+        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
+        <div class="h-6 bg-gray-300 rounded w-16"></div>
+      </div>
     </div>
-</div>
+  </div>
+</li>
 
+<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
+  <div class="flex w-full items-center justify-between space-x-6 p-2">
+    <div class="flex truncate">
+      <div class="flex justify-center items-center p-3 bg-green-50 rounded-full">
+        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+      </div>
+      <div class="w-full p-1">
+        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
+        <div class="h-6 bg-gray-300 rounded w-16"></div>
+      </div>
+    </div>
+  </div>
+</li>
+
+</ul>
 
  
   
     <!-- Table Skeleton -->
+
     <div class="border border-gray-200 rounded-lg">
-      <div class="h-12   bg-white animate-pulse rounded-lg flex justify-end items-center p-3">
-      <div class="h-8 w-96 bg-gray-200 animate-pulse rounded"></div>
+
+      <div class="h-20   bg-white animate-pulse rounded-lg flex justify-end items-center py-5 p-3">
+      <div class="h-12 w-96 bg-gray-200 animate-pulse rounded"></div>
     </div>
 
         <div class="grid grid-cols-7 bg-gray-100 p-3 font-semibold">
