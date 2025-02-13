@@ -149,7 +149,7 @@
   
     <!-- Table Skeleton -->
 
-    <div class="border border-gray-200 rounded-lg">
+    <div class="border border-gray-200 rounded-lg ">
 
       <div class="h-20   bg-white animate-pulse rounded-lg flex justify-end items-center py-5 p-3">
       <div class="h-12 w-96 bg-gray-200 animate-pulse rounded"></div>
@@ -360,7 +360,7 @@
   </div>
 
   <div class="overflow-hidden rounded-lg bg-white shadow mt-1">
-    <div class="px-1 py-2 ">
+    <div class="p-1 py-2 ">
       <DataTable  ref="dt" v-model:filters="filters" paginator :rows="rows" removableSort :loading="loading" filterDisplay="menu" :globalFilterFields="['stockname', 'quantity', 'avgprice', 'ltp', 'invamt', 'mktval', 'overall', 'days', 'date']" stripedRows :value="filteredCustomers"  >
 
 <template #paginatorstart>
