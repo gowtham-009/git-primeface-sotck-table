@@ -28,7 +28,7 @@
             </template>
               
               <template #footer v-if="showReset">
-
+                
               <Button label="Reset" style="width: 100%;" @click="resetColumns"/>
               </template>
               </MultiSelect> 
@@ -124,13 +124,14 @@
 </div>
 
 
-    <!-- Search Bar Skeleton -->
-    <div class="h-12 border border-gray-200  bg-white animate-pulse rounded-lg flex justify-end items-center p-3">
+ 
+  
+    <!-- Table Skeleton -->
+    <div class="border border-gray-200 rounded-lg">
+      <div class="h-12   bg-white animate-pulse rounded-lg flex justify-end items-center p-3">
       <div class="h-8 w-96 bg-gray-200 animate-pulse rounded"></div>
     </div>
 
-    <!-- Table Skeleton -->
-    <div class="border border-gray-200 rounded-lg">
         <div class="grid grid-cols-7 bg-gray-100 p-3 font-semibold">
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
