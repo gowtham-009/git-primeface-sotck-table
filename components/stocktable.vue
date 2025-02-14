@@ -1,12 +1,53 @@
 <template>
+
   <Toast />
   <div class="overflow-hidden rounded-lg bg-white ">
     <div class="px-1 py-2 ">
       <div class="card flex justify-between items-center gap-2  text-lg">
        
-       <div class="w-full">
+       <div class="w-full flex items-center gap-3">
+       <div>
         <div class="w-full text-black-400" > Statement For</div>
         <div class="w-full text-indigo-500" style=" margin-top: -5px;"> {{ startdate }} To {{ enddate }}</div>
+       </div>
+
+        <ConfirmPopup group="headless">
+        <template #container="{    }">
+         
+            <div class="rounded p-4">
+              <span class="text-lg"><i class="pi pi-clock"></i> Frequently used time period</span>
+              <div class="w-full p-1 flex gap-2 pl-5">
+                <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
+                <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md   px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
+                <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
+                <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3 Months</button>
+              </div>
+
+              
+             <div class="mt-3">
+              <span class="text-lg "><i class="pi pi-calendar"></i> Date Range Filter</span>
+              <div class="flex justify-center items-center gap-2">
+                <div class="w-48">
+                    <span>Start Date</span><br>
+                    <DatePicker  v-model="start" dateFormat="dd-mm-yy" showIcon />
+                </div>
+                <span>To</span>
+                <div class="w-48">
+                    <span>End Date</span><br>
+                    <DatePicker v-model="end" dateFormat="dd-mm-yy" showIcon />
+                </div>
+            </div>
+             </div>
+            <div class="w-full flex justify-start mt-2">
+              <button @click="applyFilter" class="text-white bg-indigo-600 py-1 px-2 rounded-lg">Apply filter</button>
+            </div>
+            </div>
+        </template>
+    </ConfirmPopup>
+    <div class="card h-4" >
+      <button type="button"   @click="requireConfirmation($event)" class="rounded-md bg-indigo-600 px-2 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i class="pi pi-calendar-clock"></i></button>
+    </div>
+
        </div>
         <div class="w-full h-9  flex gap-2 justify-end" >
 
@@ -24,7 +65,7 @@
               >
 
               <template #dropdownicon>
-                <i class="pi pi-objects-column" />
+                <i class="pi pi-table" />
             </template>
               
               <template #footer v-if="showReset">
@@ -32,9 +73,8 @@
 
               </template>
               </MultiSelect> 
-              <button type="button"  @click="customtoggle()" class="rounded-md bg-indigo-600 px-2 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i class="pi pi-filter-fill"></i></button>
 
-              <button type="button"   @click="exportCSV($event)" class="rounded-md bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i class="pi pi-arrow-down"></i></button>
+              <button type="button"   @click="exportCSV($event)" class="rounded-md bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i class="pi pi-arrow-circle-down"></i></button>
 
         </div>
          <div >
@@ -44,38 +84,7 @@
 
 
          </div>
-   <div  v-if="customfilterbox" ref="customBox" class=" h-64 absolute z-10 border-2 border-gray-200 bg-white p-2 rounded-lg" style=" left: 70%; top: 10%; width: 400px;;">
-  <div class="absolute bg-white border-l border-t border-gray-200 " style="width: 20px; height: 20px; ; transform: rotate(44deg) ; top: -11px; left:89%;"></div>
-
-      <span class="text-lg"><i class="pi pi-clock"></i> Frequently used time period</span>
-      <div class="w-full p-1 flex gap-2 pl-5">
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'week' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastWeek" >7 Days</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '15days' }" class="rounded-md   px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast15Days">15 Days</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === 'month' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLastMonth">Month</button>
-        <button type="button" :class="{ 'bg-blue-500 text-white': activeFilter === '3months' }" class="rounded-md  px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300" @click="filterLast3Months">3 Months</button>
-
-      </div>
-
-    <div class="mt-3">
-      <span class="text-lg mt-3"><i class="pi pi-calendar"></i> Date Range Filter</span>
-      <div class="w-full p-1  pl-5" >
-       <div class="flex justify-center items-center gap-2">
-        <div>
-              <span>Start Date</span>
-              <DatePicker  v-model="start" dateFormat="dd-mm-yy" showIcon />
-          </div>
-          <span>To</span>
-          <div>
-              <span>End Date</span>
-              <DatePicker v-model="end" dateFormat="dd-mm-yy" showIcon />
-          </div>
-       </div>
-       <div class="w-full flex justify-start mt-2">
-        <button @click="applyFilter" class="text-white bg-indigo-600 py-1 px-2 rounded-lg">Apply filter</button>
-      </div>
-      </div>
-    </div>
-</div>
+ 
 
         
       </div>
@@ -85,65 +94,28 @@
   <div  class="w-full" v-if="loading">
     <div class="p-1 space-y-4">
   
-      <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
-<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
-  <div class="flex w-full items-center justify-between space-x-6 p-2">
-    <div class="flex truncate">
-      <div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full">
-        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-      </div>
-      <div class="w-full p-1">
-        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
-        <div class="h-6 bg-gray-300 rounded w-16"></div>
-      </div>
-    </div>
+    <dl class="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8 animate-pulse">
+    <dt class="h-4 w-20 bg-gray-300 rounded"></dt>
+    <dd class="h-3 w-10 bg-gray-300 rounded"></dd>
+    <dd class="w-full h-8 bg-gray-300 rounded"></dd>
   </div>
-</li>
-
-<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
-  <div class="flex w-full items-center justify-between space-x-6 p-2">
-    <div class="flex truncate">
-      <div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full">
-        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-      </div>
-      <div class="w-full p-1">
-        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
-        <div class="h-6 bg-gray-300 rounded w-16"></div>
-      </div>
-    </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8 animate-pulse">
+    <dt class="h-4 w-20 bg-gray-300 rounded"></dt>
+    <dd class="h-3 w-10 bg-gray-300 rounded"></dd>
+    <dd class="w-full h-8 bg-gray-300 rounded"></dd>
   </div>
-</li>
-
-<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
-  <div class="flex w-full items-center justify-between space-x-6 p-2">
-    <div class="flex truncate">
-      <div class="flex justify-center items-center p-3 bg-green-50 rounded-full">
-        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-      </div>
-      <div class="w-full p-1">
-        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
-        <div class="h-6 bg-gray-300 rounded w-16"></div>
-      </div>
-    </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8 animate-pulse">
+    <dt class="h-4 w-20 bg-gray-300 rounded"></dt>
+    <dd class="h-3 w-10 bg-gray-300 rounded"></dd>
+    <dd class="w-full h-8 bg-gray-300 rounded"></dd>
   </div>
-</li>
-
-<li class="col-span-1 rounded-lg bg-white shadow animate-pulse">
-  <div class="flex w-full items-center justify-between space-x-6 p-2">
-    <div class="flex truncate">
-      <div class="flex justify-center items-center p-3 bg-green-50 rounded-full">
-        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-      </div>
-      <div class="w-full p-1">
-        <div class="h-4 bg-gray-300 rounded w-24 mb-1"></div>
-        <div class="h-6 bg-gray-300 rounded w-16"></div>
-      </div>
-    </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8 animate-pulse">
+    <dt class="h-4 w-20 bg-gray-300 rounded"></dt>
+    <dd class="h-3 w-10 bg-gray-300 rounded"></dd>
+    <dd class="w-full h-8 bg-gray-300 rounded"></dd>
   </div>
-</li>
-
-</ul>
+</dl>
 
  
   
@@ -280,82 +252,37 @@
 </div>
 
 
+
 <div class="w-full" v-if="content">
 <div class="overflow-hidden rounded-lg bg-white  mt-1">
     <div class="px-1 py-2">
-      <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-<li class="col-span-1  rounded-lg bg-white shadow">
-<div class="flex w-full items-center justify-between space-x-6 p-2">
-<div class="flex truncate">
-    <div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full"  >
-         <img src="https://cdn-icons-png.flaticon.com/128/16416/16416833.png" alt="" width="40" height="40">
-     </div>
-     <div class="w-full p-1" >
-         <span class="text-slate-400 text-md">Invested Amount</span>
-        <p class="text-slate-700"> <span><i class="pi pi-indian-rupee"></i></span> <span >{{ investamount }}</span></p>
-     </div>
-</div>
-</div>
-<div>
-
-</div>
-</li>
-
-<li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-<div class="flex w-full items-center justify-between space-x-6 p-2">
-<div class="flex truncate">
-<div class="flex justify-center items-center p-3 bg-indigo-50 rounded-full"  >
-         <img src="https://cdn-icons-png.flaticon.com/128/16416/16416833.png" alt="" width="40" height="40">
-     </div>
-     <div class="w-full p-1" >
-         <span class="text-slate-400 text-md">Current Value</span>
-        <p class="text-slate-700"><span><i class="pi pi-indian-rupee"></i></span> <span >{{ currentvalue }}</span></p>
-     </div>
-</div>
-</div>
-<div>
-
-</div>
-</li>
+ <dl class="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
+    <dt class="text-sm/6 font-medium text-gray-500">Invested Amount</dt>
+    <dd class="text-xs font-medium text-gray-700">+4.75%</dd>
+    <dd class="w-full flex-none text-3xl/10 font-medium tracking-tight text-gray-900">₹{{ investamount }}</dd>
+  </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
+    <dt class="text-sm/6 font-medium text-gray-500">Current Value</dt>
+    <dd class="text-xs font-medium text-rose-600">+54.02%</dd>
+    <dd class="w-full flex-none text-3xl/10 font-medium tracking-tight text-gray-900">₹{{ currentvalue }}</dd>
+  </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
+    <dt class="text-sm/6 font-medium text-gray-500">Overall Gain</dt>
+    <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
+    <dd class="w-full flex-none text-3xl/10 font-medium tracking-tight text-gray-900">₹{{ overallgain }}</dd>
+  </div>
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
+    <dt class="text-sm/6 font-medium text-gray-500">Today's Gain</dt>
+    <dd class="text-xs font-medium text-rose-600">+10.18%</dd>
+    <dd class="w-full flex-none text-3xl/10 font-medium tracking-tight text-gray-900">₹{{ todaygain }}</dd>
+  </div>
+</dl>
 
 
-<li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-<div class="flex w-full items-center justify-between space-x-6 p-2">
-<div class="flex truncate">
-<div class="flex justify-center items-center p-3 bg-green-50 rounded-full"  >
-         <img src="https://cdn-icons-png.flaticon.com/128/5501/5501360.png" alt="" width="40" height="40">
-     </div>                
-     <div class="w-full p-1" >
-         <span class="text-slate-400 text-md">Overall Gain</span>
-         <p  class="text-slate-700"> <span><i class="pi pi-indian-rupee"></i></span> <span >{{ overallgain }}</span></p>
-     </div>
-</div>
-</div>
-<div>
 
-</div>
-</li>
-
-<li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-<div class="flex w-full items-center justify-between space-x-6 p-2">
-<div class="flex truncate">
-<div class="flex justify-center items-center p-3 bg-green-50 rounded-full"  >
-         <img src="https://cdn-icons-png.flaticon.com/128/5501/5501360.png" alt="" width="40" height="40">
-     </div>              
-      <div class="w-full p-1" >
-         <span class="text-slate-400 text-md">Today's Gain</span>
-         <p  class="text-slate-700"> <span><i class="pi pi-indian-rupee"></i></span> <span >{{ todaygain }}</span></p>
-      </div>
-
-</div>
-</div>
-<div>
-
-</div>
-</li>
-
-</ul>
+   
     </div>
   </div>
 
@@ -495,13 +422,7 @@
   </div>
 </template>
 </Column>
-<Column  class="cursor-pointer"  v-if="visibleColumns.includes('action')"  field="action" header="Action" :showFilterOperator="false" :showFilterMatchModes="false">
-  <template #body="{ data }">
- <button type="button"  @click="rightcanva(data)" class="rounded-md w-full  px-1 py-1 text-sm bg-indigo-500 font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300" ><i class="pi pi-eye"></i></button>
 
- 
-</template>
-</Column>
 </DataTable>
 
 
@@ -629,8 +550,13 @@ import { ref, onMounted } from 'vue';
 import DatePicker from 'primevue/datepicker';
 import { FilterMatchMode, FilterOperator } from '@primevue/core/api';
 import { useToast } from "primevue/usetoast";
-
 import 'primeicons/primeicons.css'
+
+
+import { useConfirm } from "primevue/useconfirm";
+
+
+const confirm = useConfirm();
 
 
 const formatDatee = (dateString) => {
@@ -650,8 +576,6 @@ const overallgain=ref('')
 const todaygain=ref('')
 
 
-const customfilterbox = ref(false);
-const customBox = ref(null);
 
 const rows = ref(10);
 const filters = ref();
@@ -741,7 +665,7 @@ console.error("Error:", error.message);
   });
 
   activeFilter.value = 'week'; // Update active filter
-  customfilterbox.value=false
+  confirm.close();
 
   // Log first and last date if data exists
   if (filteredCustomers.value.length > 0) {
@@ -823,7 +747,7 @@ console.error("Error:", error.message);
 
   activeFilter.value = '15days'; // Update active filter state
   
-  customfilterbox.value=false
+  confirm.close();
 };
 
 // Function to filter last month
@@ -876,8 +800,7 @@ console.error("Error:", error.message);
   }
 
   activeFilter.value = 'month'; // Update active filter state
-  
-  customfilterbox.value=false
+  confirm.close();
 };
 
 // Function to filter last 3 months
@@ -930,7 +853,7 @@ console.error("Error:", error.message);
   }
 
   activeFilter.value = '3months'; 
-  customfilterbox.value=false
+  confirm.close();
 };
 
 const applyFilter = () => {
@@ -957,17 +880,14 @@ const applyFilter = () => {
   });
 
   activeFilter.value = ''; // Reset filter state when custom date is selected
-  customfilterbox.value=false
+  confirm.close();
 };
 
 onMounted(() => {
   getdata();
 });
 
-const customtoggle = () => {
 
-customfilterbox.value = !customfilterbox.value;
-};
 
 const columns = ref([
 { field: 'stockname', header: 'Stockname' },
@@ -979,7 +899,7 @@ const columns = ref([
 { field: 'overall', header: 'Overall' },
 { field: 'days', header: 'Days' },
 { field: 'date', header: 'Date' },
-{ field: 'action', header: 'Action' },
+
 ]);
 //Initially select all columns except 'ltp', 'mktval', and 'date'
 const selectedColumns = ref(columns.value.filter(col => !['ltp', 'mktval', 'date'].includes(col.field)));
@@ -1082,6 +1002,14 @@ console.error("Error:", error.message);
 }
 
 
+const requireConfirmation = (event) => {
+    confirm.require({
+        target: event.currentTarget,
+        group: 'headless',
+        message: 'Save your current process?',
+       
+    });
+}
 
 </script>
 <style>
