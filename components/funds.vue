@@ -12,116 +12,92 @@
       <div class="h-12 w-8 bg-gray-200 animate-pulse rounded"></div>
     </div>
 
-        <div class="grid grid-cols-7 bg-gray-100 p-3 font-semibold">
+        <div class="grid grid-cols-4 bg-gray-100 p-3 font-semibold">
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
             <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
-            <div class="h-8 w-20 bg-gray-200 animate-pulse rounded"></div>
+            
         </div>
 
         <!-- Table Rows -->
         <div class="divide-y divide-gray-200">
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+              
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+        
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+              
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+              
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+             
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+              
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+             
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+            
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+          
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+               
             </div>
-            <div class="grid grid-cols-7 p-3 animate-pulse">
+            <div class="grid grid-cols-4 p-3 animate-pulse">
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
                 <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
-                <div class="h-6 w-20 bg-gray-200 rounded"></div>
+             
             </div>
             
         </div>

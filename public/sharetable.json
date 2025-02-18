@@ -1207,19 +1207,7 @@
         "days": "10.00",
         "daysplus": "+1.00%"
     },
-    {
-        "stockname": "LMNOP",
-        "date": "2025-02-17",
-        "quantity": 30,
-        "avgprice": "300.50",
-        "ltp": "117.00",
-        "invamt": "260.50",
-        "mktval": "9000.00",
-        "overall": "2.50",
-        "overallpluss": "-3.50%",
-        "days": "20.00",
-        "daysplus": "+0.50%"
-    },
+
     {
         "stockname": "ABCAPITAL",
         "date": "2025-02-01",
@@ -1541,6 +1529,45 @@
         "invamt": "100.50",
         "mktval": "1000.00",
         "overall": "20.50",
+        "overallpluss": "-3.50%",
+        "days": "20.00",
+        "daysplus": "+0.50%"
+    },
+    {
+        "stockname": "LMNOP",
+        "date": "2025-02-16",
+        "quantity": 30,
+        "avgprice": "300.50",
+        "ltp": "117.00",
+        "invamt": "260.50",
+        "mktval": "9000.00",
+        "overall": "2.50",
+        "overallpluss": "-3.50%",
+        "days": "20.00",
+        "daysplus": "+0.50%"
+    },
+    {
+        "stockname": "LMNOP",
+        "date": "2025-02-17",
+        "quantity": 30,
+        "avgprice": "300.50",
+        "ltp": "117.00",
+        "invamt": "260.50",
+        "mktval": "9000.00",
+        "overall": "2.50",
+        "overallpluss": "-3.50%",
+        "days": "20.00",
+        "daysplus": "+0.50%"
+    },
+    {
+        "stockname": "LMNOP",
+        "date": "2025-02-18",
+        "quantity": 30,
+        "avgprice": "300.50",
+        "ltp": "117.00",
+        "invamt": "260.50",
+        "mktval": "9000.00",
+        "overall": "2.50",
         "overallpluss": "-3.50%",
         "days": "20.00",
         "daysplus": "+0.50%"
