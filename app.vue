@@ -171,6 +171,9 @@
           <div v-if="activeComponent === 'Funds'">
             <funds />
           </div>
+          <div v-if="activeComponent === 'Withdraw'">
+            <withdraw />
+          </div>
           <div class="w-full" v-if="profilepanel">
             <profile/>
           </div>
@@ -188,6 +191,7 @@ import profile from './components/profile.vue'
 import trades from './components/trades.vue'
 import profiltloss from './components/profitloss.vue'
 import funds from './components/funds.vue'
+import withdraw from './components/withdraw.vue'
 import {
   Dialog,
   DialogPanel,
@@ -220,7 +224,7 @@ const navigation = [
   { name: 'Trades', href: '#', icon: FolderIcon,  },
   { name: 'Profit / Loss', href: '#', icon: CalendarIcon,  },
   { name: 'Funds', href: '#', icon: DocumentDuplicateIcon,  },
-  { name: 'Reports', href: '#', icon: ChartPieIcon,  },
+  { name: 'Withdraw', href: '#', icon: ChartPieIcon,  },
 ]
 const teams = [
   { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
