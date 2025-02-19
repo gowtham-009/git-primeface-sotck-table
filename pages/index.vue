@@ -112,7 +112,7 @@
                 <span class="sr-only">Open user menu</span>
                 <img class="w-10 h-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                 <span class="hidden lg:flex lg:items-center">
-                  <span class="ml-4 text-sm/6 font-semibold text-gray-900" aria-hidden="true">Gowtham</span>
+                  <span class="ml-4 text-sm/6 font-semibold text-gray-900" aria-hidden="true">{{ val }}</span>
                   <ChevronDownIcon class="ml-2 w-10 h-10 text-gray-400" aria-hidden="true" />
                 </span>
               </MenuButton>
@@ -129,6 +129,7 @@
       </div>
 
       <main class="py-2">
+       
         <div class="px-4 sm:px-6 lg:px-8">
           <div v-if="activeComponent === 'Ledger'">
             <ledger />
@@ -159,12 +160,13 @@
 
 <script setup>
 import { ref } from 'vue'
-import ledger from './components/ledger.vue'
-import profile from './components/profile.vue'
-import trades from './components/trades.vue'
-import profiltloss from './components/profitloss.vue'
-import funds from './components/funds.vue'
-import withdraw from './components/withdraw.vue'
+
+import ledger from '~/components/newone.vue'
+import profile from '~/components/profile.vue'
+import trades from '~/components/trades.vue'
+import profiltloss from '~/components/profitloss.vue'
+import funds from '~/components/funds.vue'
+import withdraw from '~/components/withdraw.vue'
 import {
   Dialog,
   DialogPanel,
@@ -188,7 +190,7 @@ import {
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
-import Profiltloss from './components/profitloss.vue'
+import Profiltloss from '~/components/profitloss.vue'
 
 const profilepanel=ref(false)
 const navigation = [
@@ -223,4 +225,21 @@ if(item.name=='Your profile'){
 }
 
 
+
+import { onMounted} from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+const val = ref(route.query.val); 
+
+onMounted(() => {
+
+  if (route.query.val) {
+  
+    router.replace({ path: route.path, query: {} });
+ 
+  }
+});
+console.log(val.value)
 </script>
